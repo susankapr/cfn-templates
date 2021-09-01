@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh 'echo \'building...\''
       }
     }
 
@@ -18,7 +18,13 @@ pipeline {
         CI = 'true'
       }
       steps {
-        sh './jenkins/scripts/test.sh'
+        sh 'echo \'testing...\''
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh 'echo \'Deploying....\''
       }
     }
 
